@@ -22,7 +22,9 @@ namespace CarLotSimulator
                 HonkNoise = "Beep",
                 IsDriveable = true
             };
+            Car._numberOfCars++;
             carTotal.ListOfCars.Add(myCar);
+            Console.WriteLine($"Current car total is: {Car._numberOfCars}");
             var friendCar = new Car();
             friendCar.Year = 2013;
             friendCar.Make = "Honda";
@@ -30,8 +32,12 @@ namespace CarLotSimulator
             friendCar.EngineNoise = "Growl";
             friendCar.HonkNoise = "Roar";
             friendCar.IsDriveable = false;
+            Car._numberOfCars++;
             carTotal.ListOfCars.Add(friendCar);
+            Console.WriteLine($"Current car total is: {Car._numberOfCars}");
             var carFromHell = new Car(2023, "Tesla", "Cybertruck", "Buzz", "Beep Beep", true);
+            Car._numberOfCars++;
+            Console.WriteLine($"Current car total is: {Car._numberOfCars}");
             carTotal.ListOfCars.Add(carFromHell);
             Car.MakeEngineNoise(myCar.EngineNoise);
             Car.MakeHonkNoise(myCar.HonkNoise);
